@@ -1,0 +1,269 @@
+[class*="col"]{
+    float: left;
+    width: 100%;
+
+    // rtl style
+    // float: right;
+    // direction: rtl;
+}
+
+// ---------------code for  the mobile view---------------
+@media only screen and (max-width: 600px) {
+
+    div div .leftText{
+        padding-top: 10%;
+    }
+    div div .leftText p{
+        font-size: 22px;
+    }
+    // the form style for mobile
+    div div .loginFormDiv{
+        padding: 0px;
+        padding-top: 20px;
+    }
+    div div div .formTitle{
+        font-size: 25px;
+    }
+    div div div .card{
+        padding-top: 20px;
+    }
+   
+    // button submit style in mobile view
+    div div div .btnSubmitDiv{
+        padding-left: 30%;
+        padding-right: 30%;
+    }
+
+    //  icons style
+    div div div form div span .fa-user{ font-size: 22px; padding-top: 7px;}
+    div div div form div span .fa-lock{ font-size: 22px; padding-top: 7px;}
+    // input style
+    div div div form div span .inputStyle{height: 40px;}
+    // input placeholder style
+    div div div form div span .inputStyle:placeholder-shown{font-size: 15px;}
+
+}
+//--------------------------------------------------------
+
+
+// the full div style
+.fullViewDiv{
+    padding-top: 6%;
+    padding-bottom: 6%;
+    background-color: #dde1e7;
+}
+
+
+// ------------------- left text -------------------
+
+.leftText{
+    padding-top: 30%;
+}
+.leftText p{
+    font-size: 37px;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-weight: bold;
+    animation: changeColor 3s ;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+@keyframes changeColor{
+     from {color: rgb(73, 160, 241);}
+     to {color: rgb(41, 111, 157);}
+}
+
+// ---------------------------------------------------
+
+
+// the outer div for form
+.loginFormDiv{
+    padding-top: 0%;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+// ---the form sytle------
+.card{
+    padding: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #dde1e7;
+    box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+    
+    width: 100%;
+}
+//--------------------------
+
+
+
+// form title style
+.formTitle{
+    font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #595959;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  animation: changeColor 3s ;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+//---------- span ----------
+span{
+    float: left;
+}
+.iconSpan{
+    width: 10%; margin-left: 4%;
+}
+.inputSpan{
+    width: 85%;
+}
+// --------------------------
+
+
+// ------------------------inputs style------------------------
+.inputStyle{
+    height: 50px;
+    width: 100%;
+    padding-left: 20px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid rgb(193, 187, 187);
+    color: #595959;
+    background: #dde1e7;
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px #babecc,
+                inset -5px -5px 10px #ffffff73;
+    margin-bottom: 10px;
+}
+.inputStyle:focus {
+    box-shadow: inset 1px 1px 2px #babecc,
+                inset -1px -1px 2px #ffffff73;
+}
+.inputStyle::after{
+    box-shadow: inset 1px 1px 2px #babecc,
+    inset -1px -1px 2px #ffffff73;
+}
+.inputStyle:placeholder-shown{
+    font-size: 17px;
+}
+
+//-------------------------------------------------------
+
+.thealert{
+    margin-left: 15%;
+}
+
+// ----------------the icons style code ------------------
+
+// icon code lock
+.fa-lock{
+    padding-top: 10px;
+    font-size: 30px;
+    color: #595959;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+// icon code user
+.fa-user{
+    padding-top: 10px;
+    font-size: 30px;
+    color: #595959;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+//-------------------------------------------------------
+
+//the forgot link style
+.forgot-pass a{
+    font-weight: 500;
+}
+
+// -------------------style button submit-----------------
+.btnSubmit{
+    margin: 15px 0;
+    width: 100%;
+    height: 50px;
+    color:#595959;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #d0d5df;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 35px;
+    box-shadow: 2px 2px 5px #babecc,
+                -5px -5px 10px #ffffff73;
+    margin-bottom: 30px;
+  }
+  .btnSubmit:hover{
+      background-color: gray;
+      color: white;
+  }
+
+//-------------------------------------------------------
+
+
+// ----------------- loginImage ----------------------
+
+.loginImage{
+    padding-top: 25%;
+    padding-bottom: 40%;
+
+}
+.loginImage img{
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+    animation: imgMove 3s ;
+    animation-iteration-count: 1.7;
+    animation-direction: alternate;
+}
+@keyframes imgMove{
+    from {transform: rotate(10deg);}
+    to {transform: rotate(-10deg);}
+}
+//-----------------------------------------------
+
+
+
+table{
+    position: relative;
+    width: 700px;
+    border: 1px solid gray;
+    margin-bottom: 20p;
+}
+
+.btn-warning{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.btn-danger{
+    float: right;
+    margin: 5px;
+}
+
+th{
+    border: 1px solid brown;
+    margin: 2px;
+    text-align: center;
+    float: left;
+    padding: 5px;
+    width: 140px;
+}
+td{
+    float: left;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid brown;
+    margin: 2px;
+    width: 140px;
+    overflow: hidden;
+    height: auto;
+}

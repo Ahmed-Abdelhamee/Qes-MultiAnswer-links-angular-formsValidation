@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fileuploafd </title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-12">
+            <p class="text-center">upload file in angular only</p>
+            <div class="file">
+                <input type="file" name="file" id="file" (change)="upload($event)" accept=".jpg ,.png">
+                <div class="show">
+                    <img [src]="url" alt="img" width="200px">
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <p class="text-center">upload file in angular using http request 
+                and firebase realtime database</p>
+            <div class="file">
+                <input type="file" name="filee" id="filee" accept=".jpg ,.png" (change)="uploadFirebase($event)">
+                <img [src]="addphoto.photourl" alt="img" width="200px" >
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

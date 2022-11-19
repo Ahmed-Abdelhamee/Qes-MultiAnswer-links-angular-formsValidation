@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></head>
+<body>
+
+    <!-- the full  div -->
+    <div class="col-12 fullViewDiv">
+
+        <div class="col-12">
+            <a routerLink="/" class="col-4">
+                <p style="font-weight: bold; margin-left: 40px;font-size: 20px;">go home</p>
+            </a>
+        </div>
+
+        <div class="col-sm-3" *ngFor="let item of localdata; let id=index;">
+            <p> name : {{item.name}} * age : {{item.age}}</p>
+            <!-- <button class="btn btn-warning" (click)="deletelocalItem(id)">delete</button> -->
+
+        </div>
+
+        <table>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>pass</th>
+            </tr>
+            <div *ngFor="let item of logindata ; let i=index; ">
+                <tr>
+                    <td>{{i+1}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.pass}}</td>
+                    <button class="btn btn-warning" (click)="deleteItem(item.id)">delete</button>
+                    <button class="btn btn-info" (click)="updateData(item.id)"> edit</button>
+                </tr>
+            </div>
+            <button class="btn btn-danger" (click)="deleteAll()">delete all</button>
+
+        </table>
+        <br>
+
+        <!-- empty div for making the form div in center -->
+        <div class="col-sm-3">
+            <div class="leftText">
+                <p>Welcome To Journal Of Technologial Research (JTR) </p>
+            </div>
+        </div>
+
+
+
+        <!-- ----------the form total div start--------  -->
+        <div class="col-sm-6" >
+
+            <div class="loginFormDiv" data-aos="zoom-in" data-aos-duration="2000">
+
+                <!-------------   the form code   ---------- -->
+                <form #data="ngForm"  (ngSubmit)="setData(data)" class="card" novalidate>
+                    
+                    <!-- the form title  -->
+                    <h2 class="formTitle"> Sign In</h2>
+                    
+                    <!-- ------------------ email(input) with icon ------------- -->
+                    <div class="form-group">
+                        <!-- icon  -->
+                        <span class="iconSpan"><i class="fa fa-user"></i> </span>
+                       <!-- input -->
+                        <span class="inputSpan"><input type="email" email class="inputStyle form-control" placeholder="Enter email"  [class.is-invalid]="email.invalid && email.touched" name="email" #email ngModel ></span>
+                        <!-- <small class="text-danger thealert" *ngIf="email.invalid && email.touched">email is reqiured</small> -->
+                    </div>
+
+                    <!-- --------------- password(input) with icon ---------- -->
+                    <div class="form-group">
+                        <!-- icon -->
+                        <span class="iconSpan"><i class="fa fa-lock"></i> </span>
+                        <!-- input -->
+                        <span class="inputSpan "><input type="password" class="inputStyle form-control" placeholder="Enter password"  [class.is-invalid]="pass?.invalid && pass?.touched" name="pass"  #pass ngModel></span>
+                        <!-- <small class="text-danger thealert" *ngIf="pass?.invalid && pass?.touched">password is reqiured</small> -->
+                    </div>
+
+                    <!-- the forget password link -->
+                    <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
+
+                    <!-- submit button -->
+                    <div class="btnSubmitDiv">
+                        <button type="submit" class="btn btn-primary btnSubmit">login</button>
+                    </div>
+
+                  </form>
+            </div>
+
+        </div>
+        
+        <!-- ------------- div for login image ---------------- -->
+        <div class="col-sm-3">
+            <div class="loginImage" data-aos="fade-down" data-aos-duration="1000">
+                <img src="assets\01.jpg" alt="">    
+            </div>
+        </div>
+        
+    
+        
+    
+    </div>
+    
+    
+</body>
+</html>

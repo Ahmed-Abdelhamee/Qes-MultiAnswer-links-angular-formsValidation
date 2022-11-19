@@ -1,0 +1,59 @@
+[class*="col-"]{
+    width: 100%;
+    float: left;
+}
+@media only screen and (max-width: 600px) {
+    div .Qes_Answer{
+        font-size: 20px;
+    }
+    div div .wlcText{
+        font-size: 20px;
+    }
+    div .btnAdd{
+        margin-left: 38%;
+    }
+}
+
+.container{
+    margin-top: 20px;
+    font-weight: bold;
+}
+.Qes_Answer{
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.wlcText{
+    text-align: center;
+    font-style: italic;
+}
+.card{
+    text-align: center;
+    padding-top: 20px;
+    margin: 5px;
+    height: 160px;
+}
+form{
+    font-weight: bold;
+}
+.alert{
+    font-weight: bold;
+}
+.URLphoto{
+    width: 40%;
+}
+$x:orange;
+.targetValue{
+    color: $x;
+    // color: blue;
+}
+.btnAdd{
+    margin-top: 20px;
+    margin-left: 46%;
+    margin-bottom: 200px;
+}
+.submit{
+    margin-top: 20px;
+    margin-left: 40%;
+}

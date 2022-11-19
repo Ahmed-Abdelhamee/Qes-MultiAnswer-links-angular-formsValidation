@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div *ngFor="let item of empsdata">
+        <p>name :{{item.name}} // age :{{item.age}}</p>
+        <p></p>
+    </div>
+
+
+     <!-- ------------------------------- template driven form ------------------------------- -->
+
+    <!-- <form  #F="ngForm" (ngSubmit)="submit(F)"    style="width: 600px ; padding: 100px;" novalidate>
+        name : <input type="text" class="form-control" required  #fname="ngModel" ngModel [class.is-invalid]="fname.invalid && fname.touched" name="fname">
+        <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">name is required</small>
+
+        <br> email : <input type="email" class="form-control" required email #email="ngModel" ngModel [class.is-invalid]="email.invalid && email.touched" name="email">
+        <small class="text-danger" *ngIf="email.invalid && email.touched">email is required</small>
+
+        <br> phone :<input type="tel" pattern="^\d{11}$" class="form-control" required #phone="ngModel" ngModel name="phone" [class.is-invlaid]="phone.invalid && phone.touched">  
+        <div *ngIf="phone.errors && phone.touched ">
+            <small class="text-danger" *ngIf="phone.errors.required">phone is required</small>
+            <small class="text-danger" *ngIf="phone.errors.pattern">phone must be 11 digit</small>
+        </div>
+        <br> <input type="submit" value="submit">
+    </form> -->
+
+
+
+    <!-- //----------------- Form groub ---------------------- -->
+
+    <form #f="ngForm" (ngSubmit)="usersubmit(f)" [formGroup]="myregistrationForm" class="form-groub"  style="width: 600px ; padding: 100px; padding-top: 0px; margin-left: 30%;" >
+        name : <input type="text" class="form-control" required name="name" formControlName="name">
+        <!-- <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">name is required</small> -->
+        <small class="text-danger" *ngIf="getname.errors.invalidName">{{getname.errors.invalidName.value}} is not allowd</small>
+        <br> email : <input type="email" email [class.is-invalid]="myregistrationForm.get('email')?.invalid && myregistrationForm.get('email')?.touched" class="form-control" name="email" formControlName="email">
+        <small class="alert-danger" [class.d-none]="email?.untouched && email?.valid">email is required</small>
+        <br>
+        <input type="checkbox" formControlName="checkbox" (click)="setrequired()">
+
+        <button class="btn btn-warning" (click)="addnewEmail()">add new email</button>
+
+        <div class="form-groub" *ngFor="let item of addEmail.controls ; let i = index ; ">
+            <label for="newEmail"> add email nubmer {{i+1}}</label>
+            <input type="email" [formControlName]="i">
+        </div>
+
+        <!-- <small class="text-danger" *ngIf="email.invalid && email.touched">email is required</small> -->
+        <br> <label for="pass">password :</label>
+        <input type="password" name="password" id="password" formControlName="password" class="form-control" >
+        
+        <label for="pass">confirmpassword :</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" formControlName="confirmpassword" class="form-control">
+        <small class="text-danger" *ngIf="myregistrationForm.errors.notEqual">password and confirm password must be equal</small>
+
+        <br> phone :<input type="tel" pattern="^\d{11}$" class="form-control" name="phone" required formControlName="phone">  
+        
+        <div *ngIf="myregistrationForm.get('phone').errors && myregistrationForm.get('phone').touched ">
+            <small class="text-danger" *ngIf="myregistrationForm.get('phone').errors.required">phone is required</small>
+            <small class="text-danger" *ngIf="myregistrationForm.get('phone').errors.pattern">phone must be 11 digit</small>
+        </div>
+        
+        <br> <input type="submit" value="submit">
+        <button (click)="setdata()" > asd </button>
+    </form>
+</body>
+</html>

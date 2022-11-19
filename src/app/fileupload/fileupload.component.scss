@@ -1,0 +1,20 @@
+[class*="col-"]{
+    float: left;
+    box-sizing: border-box;
+
+}
+
+.container{
+    padding-top: 100px;
+}
+p{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(168, 168, 168);
+}
+.file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}

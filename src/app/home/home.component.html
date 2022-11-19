@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ques-multianswers</title>
+</head>
+<body>
+    
+    <!-- Example for adding photo in the html dynamically -->
+    <!-- <div class="one" id="one" [innerHTML]="MedoDiv"><h1>one</h1></div>
+    <input type="text" name="input" id="input" #input>
+    <button (click)="do()">do</button> -->
+
+    <div class="col-12 container">
+       <br>
+      <button (click)="translate.use('ar')" class="btn btn-danger" style="margin-left: 20px;">ar</button>
+      <button (click)="translate.use('en')" class="btn btn-danger" style="margin-left: 20px;">en</button>
+      <br>
+      <div class="col-sm-3">
+         <a routerLink="/mylinks"><p class="mylinks">mylinks</p></a>
+         <a routerLink="/regist"><p class="mylinks">regist</p></a>
+         <a routerLink="/login"><p class="mylinks">login</p></a>
+         <a routerLink="/rtl"><p class="mylinks">rtl</p></a>
+         <a routerLink="/fileupload"><p class="mylinks">fileupload</p></a>
+      </div>
+      <h1 class="text-center alert-secondary title col-12"> {{"ques" | translate}}</h1>  
+      
+
+      
+    </div>
+    
+<div class="container col-12">
+   <h1><a href="/chat">chat</a></h1>
+    <form #f="ngForm" (ngSubmit)="submit(f)" >
+      
+        <div id="Qes1" class=" col-12">
+           <h2>1- what are the types of data in C++ ?</h2>
+        </div>
+        <div id="Qes2" class=" col-12">
+            <h2>2- what are the types of condition statments in C++ ?</h2>
+         </div>
+         <div id="Qes3" class=" col-12">
+            <h2>3- what are the types of repetition statments in C++ ?</h2>
+         </div>
+         <div id="Qes4" class=" col-12">
+            <h2>4- what are the types of functions in C++ ?</h2>
+         </div>
+         <div id="Qes5" class=" col-12">
+            <h2>5- what is the return type of funtion type void in C++ ?</h2>
+         </div>
+         <div id="Qes6" class=" col-12">
+            <h2>6- what do you konw about funtion recursion C++ ?</h2>
+         </div>
+         <div id="Qes7" class=" col-12">
+            <h2>7- can you build new function inside any function in C++ ?</h2>
+         </div>
+         <div id="Qes8" class=" col-12">
+            <h2>8- what is the local variable in C++ ?</h2>
+         </div>
+         <div id="Qes9" class=" col-12">
+            <h2>9- what is the global variable  in C++ ?</h2>
+         </div>
+         <div id="Qes10" class=" col-12">
+            <h2>10- what is private data in C++ ?</h2>
+         </div>
+
+         <div class="col-12">
+            <button class="btn btn-primary" id="nextQues" type="button" (click)="nextQues()">next question =></button>
+         </div>
+
+        <button class="btn btn-success" id="submit" type="submit">submit</button>
+
+    </form>
+    <div class="col-12 alert alert-success text-center" *ngIf="done"> your answers send succefully</div>
+    <div class="col-12 alert alert-danger text-center" *ngIf="err"> please check your answers</div>
+</div>
+
+</body>
+</html>

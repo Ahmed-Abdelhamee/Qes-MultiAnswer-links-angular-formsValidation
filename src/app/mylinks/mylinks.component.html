@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mylinks</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="Qes_Answer">Q-MultiAnswers</a>
+        <div class="alert alert-warning"><h1 class="wlcText">save your links here</h1></div>
+        <a routerLink="/login" class="Qes_Answer">login</a>
+
+        
+        <div class="col-12">
+            <div class="col-sm-2 card" *ngFor="let item of siteData">
+                <a [href]="item.URL" [target]="item.target">
+                    <img [src]="item.photo" alt="photo" class="URLphoto">
+                    <p class="linkname">{{item.sitename}}</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary btnAdd" data-toggle="modal" data-target="#myModal">
+            add link
+        </button>
+
+        <button type="button" class="btn btn-danger" (click)="showSweetalert()">sweetalert2</button>
+    </div>
+</body>
+</html>
+
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+            <div class="modal-content">
+        
+                <!-- Modal Header -->
+                <div class="modal-header">
+                <h4 class="modal-title">link details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+        
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form #f="ngForm" class="form-group" (ngSubmit)="addLink(f)"  action="/action_page.php">
+                        <label for="site name :">site name</label>
+                        <input type="text" class="form-control" name="site" id="site" #site ngModel>
+                        <label for="URL :">URL</label>
+                        <input type="text" class="form-control" name="URL" id="URL" #URL ngModel>
+                        <label for="photo :"> uplaod site photo </label>
+                        <!-- <input type="text" class="form-control" name="photo" id="photo" #photo ngModel> -->
+                        <input type="file" class="form-control" name="photo" id="photo" #photo accept=".jpg,.png" (change)="upladImage($event)" ngModel > <br>
+                        <label for="check">check the link open way</label> <br>
+                        <label for="check" class="targetValue">
+                            <input type="radio" name="targetValue" id="targetValue" #targetValue value="" ngModel> open in current tab
+                            <input type="radio" name="targetValue" id="targetValue" #targetValue value="_blank" ngModel style="margin-left: 20px;"> open in new tab <br>
+                        </label>
+                        
+                        <button type="submit" class="btn btn-success submit">add link</button>
+                    </form>
+                    
+                    <div class="alert alert-success text-center" *ngIf="checkSuccess">site saved successfully</div>
+                    <div class="alert alert-danger text-center" *ngIf="checkfail">check you enter URL and site name at least</div>
+                </div>
+        
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+        
+            </div>
+            </div>
+        </div>
